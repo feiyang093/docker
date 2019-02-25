@@ -1,4 +1,4 @@
-# docker-compose.yml
+## 添加 docker-compose.yml
 ```
 version : '2'
 services:
@@ -26,8 +26,24 @@ daemonize no 默认情况下，redis不是在后台运行的，如果需要在�
 daemonize yes
 
 必须改成 no 才可以访问
-## 配置
+## 配置 redis.conf 
 需要把 bind 127.0.0.1 屏蔽
 ```
 #bind 127.0.0.1
+```
+## 运行命令
+1. 创建并运行容器
+```
+docker-compose up -d
+docker-compose up 
+```
+2. 停止
+```
+docker-compose stop redis
+
+```
+3. 删除容器
+```
+docker-compose rm redis
+
 ```
