@@ -23,9 +23,13 @@ networks:
 ```
 ## 遇到坑
 daemonize no 默认情况下，redis不是在后台运行的，如果需要在后台运行，把该项的值更改为yes
-daemonize yes
 
-必须改成 no 才可以访问
+
+**必须改成 no 才可以启动**
+```
+daemonize no
+```
+
 ## 配置 redis.conf 
 需要把 bind 127.0.0.1 屏蔽
 ```
