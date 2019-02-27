@@ -1,3 +1,4 @@
+[toc]
 ## 添加 docker-compose.yml
 ```
 version : '2'
