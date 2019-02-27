@@ -10,7 +10,7 @@ services:
           - "netName1"
       volumes:
           #- /opt/conf/:/mnt/
-          - /usr/local/www/redis:/etc/redis
+          - ./:/etc/redis
           #- /usr/local/www/redis/redis.conf:/usr/local/etc/redis/redis.conf
       command: redis-server /etc/redis/redis.conf requirepass dzq123456
 
