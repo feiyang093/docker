@@ -9,10 +9,10 @@ services:
       volumes:
           #- /opt/conf/:/mnt/
           - /srv/static:/usr/share/nginx/html
-          - /usr/local/www/nginx/conf/nginx.conf:/etc/nginx/ngingx.conf
-          - /usr/local/www/nginx/conf/conf.d:/etc/nginx/conf.d
-          - /usr/local/www/nginx/logs:/var/log/nginx
-          - /usr/local/www/nginx/ssl:/etc/nginx/ssl
+          - ./conf/nginx.conf:/etc/nginx/ngingx.conf
+          - ./conf/conf.d:/etc/nginx/conf.d
+          - ./logs:/var/log/nginx
+          - ./ssl:/etc/nginx/ssl
 networks:
       netName1:
          driver: bridge
