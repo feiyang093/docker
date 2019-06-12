@@ -1,18 +1,19 @@
 version : '2'
 services:
-   nginx:
-      image: nginx
+   redis:
+      restart: always
+      image: redis
       ports:
-          - "80:80"
+          - "6379:6379"
+      container_name: redis
       networks:
           - "netName1"
       volumes:
           #- /opt/conf/:/mnt/
-          - /srv/static:/usr/share/nginx/html
-          - /usr/local/www/nginx/conf/nginx.conf:/etc/nginx/ngingx.conf
-          - /usr/local/www/nginx/conf/conf.d:/etc/nginx/conf.d
-          - /usr/local/www/nginx/logs:/var/log/nginx
-          - /usr/local/www/nginx/ssl:/etc/nginx/ssl
+          - ./:/etc/redis
+          #- /usr/local/www/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      command: redis-server /etc/redis/redis.conf requirepass dzq123456
+
 networks:
       netName1:
          driver: bridge
